@@ -1,0 +1,18 @@
+body, html {
+    height: 100%;
+    background-image: url("http://www.mbc.net/default/mediaObject/Photos/2013/july/week3/25-7-2013/35/GRID-mbc2-1024/MR-BEAN-S-HOLIDAY_1024/original/6ab275220257928e23cf032d56018509fdc06252/MR-BEAN-S-HOLIDAY_1024.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div {
+  background-color: white;
+  width: 20em;
+  height: 10em;
+  margin: 1em;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+
+}
