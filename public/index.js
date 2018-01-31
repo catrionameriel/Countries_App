@@ -14,28 +14,48 @@ var requestComplete = function(){
   var dropDown = document.querySelector('#country-dropdown');
 
   dropDown.addEventListener('change', function() {
+    var listContent = document.querySelector('#country-list').getElementsByTagName('li');
     var the_country = null;
     for (country of countries){
-      console.log(country);
       if (this.value === country.name){
         var the_country = country;
       }
     }
 
+    if (listContent.length === 0) {
     var ul = document.querySelector('#country-list');
 
     var li = document.createElement("li");
     li.innerText = the_country.name;
+    li.setAttribute("id", "name-of-the-country");
 
     var li2 = document.createElement("li");
     li2.innerText = the_country.population;
+    li2.setAttribute("id", "population-of-the-country");
 
     var li3 = document.createElement("li");
     li3.innerText = the_country.capital;
+    li3.setAttribute("id", "capital-of-the-country");
 
     ul.appendChild(li);
     ul.appendChild(li2);
     ul.appendChild(li3);
+
+    var jsonString = JSON.stringify(the_country);
+    localStorage.setItem('country', jsonString);
+    }
+    else {
+      var nameLi = document.querySelector('#name-of-the-country');
+      var populationLi = document.querySelector('#population-of-the-country');
+      var capitalLi = document.querySelector('#capital-of-the-country');
+
+      nameLi.innerText = the_country.name;
+      populationLi.innerText = the_country.population;
+      capitalLi.innerText = the_country.capital;
+
+      var jsonString = JSON.stringify(the_country);
+      localStorage.setItem('country', jsonString);
+    }
   });
 }
 
