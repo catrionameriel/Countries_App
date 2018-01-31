@@ -20,6 +20,13 @@ var populateList = function(countries){
   })
 }
 
+var populateOptions = function(countries){
+  var select = document.querySelector("#country-dropdown");
+
+
+
+}
+
 var requestComplete = function(){
   if (this.status !== 200) return;
   var jsonString = this.responseText;
